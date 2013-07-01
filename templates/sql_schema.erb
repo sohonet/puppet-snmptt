@@ -1,0 +1,29 @@
+CREATE TABLE snmptt (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+eventname VARCHAR(50),
+eventid VARCHAR(50),
+trapoid VARCHAR(100),
+enterprise VARCHAR(100),
+community VARCHAR(20),
+hostname VARCHAR(100),
+agentip  VARCHAR(16),
+category VARCHAR(20),
+severity VARCHAR(20),
+uptime  VARCHAR(20),
+traptime VARCHAR(30),
+formatline VARCHAR(255));
+CREATE TABLE snmptt_unknown (
+trapoid VARCHAR(100),
+enterprise VARCHAR(100),
+community VARCHAR(20),
+hostname VARCHAR(100),
+agentip  VARCHAR(16),
+uptime  VARCHAR(20),
+traptime VARCHAR(30),
+formatline VARCHAR(255));
+CREATE TABLE snmptt_statistics (
+stat_time VARCHAR(30),
+total_received BIGINT,
+total_translated BIGINT,
+total_ignored BIGINT,
+total_unknown BIGINT);
