@@ -121,7 +121,7 @@ class snmptt (
     }
   }
   else {
-    $real_mysql_password = ''
+    $real_mysql_password = undef
   }
 
   file { '/etc/snmp/snmptt.ini':

@@ -13,10 +13,10 @@ strip_domain_list = <<END
 <% end -%>
 END
 resolve_value_ip_addresses = 0
-net_snmp_perl_enable = 0
+net_snmp_perl_enable = 1
 net_snmp_perl_cache_enable = 1
 net_snmp_perl_best_guess = 0
-translate_log_trap_oid = 0
+translate_log_trap_oid = 1
 translate_value_oids = 1
 translate_enterprise_oid_format = 1
 translate_trap_oid_format = 1
@@ -25,6 +25,7 @@ translate_integers = 1
 wildcard_expansion_separator = " "
 allow_unsafe_regex = 0
 remove_backslash_from_quotes = 0
+mibs_environment = ALL
 dynamic_nodes = 0
 description_mode = 0
 description_clean = 1
@@ -48,6 +49,7 @@ log_system_file = /var/log/snmptt/snmpttsystem.log
 unknown_trap_log_enable = <%= @real_unknown_trap_log_enable %>
 unknown_trap_log_file = /var/log/snmptt/snmpttunknown.log
 statistics_interval = 0
+date_time_format = %Y-%m-%d %H:%M:%S
 syslog_enable = <%= @real_syslog_enable %>
 syslog_facility = local0
 syslog_level_debug = <<END
