@@ -1,5 +1,5 @@
 {
-  "name": "puppet-snmptt",
+  "name": "wyrie-snmptt",
   "version": "0.0.1",
   "summary": "Puppet module to install and configure SNMPTT",
   "author": "Scott Barr",
