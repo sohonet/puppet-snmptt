@@ -5,9 +5,17 @@
   "author": "Scott Barr",
   "description": "From Authors page: NMPTT (SNMP Trap Translator) is an SNMP trap handler written in Perl for use with the Net-SNMP / UCD-SNMP snmptrapd program",
   "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.0.2" },
+    { "name": "puppetlabs/mysql", "version_requirement": ">= 3.0.0 < 4.0.0" }
+  ],
+  "operatingsystem_support": [
     {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 4.0.2"
+      "operatingsystem":"CentOS",
+      "operatingsystemrelease":["6"]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": ["6"]
     }
   ],
   "checksums": {},

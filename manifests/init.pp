@@ -109,7 +109,7 @@ class snmptt (
       user     => $mysql_username,
       password => $real_mysql_password,
       host     => $mysql_host,
-      grant    => ['Select_priv','Insert_priv','Update_priv','Delete_priv','Lock_tables_priv'],
+      grant    => ['SELECT','INSERT','UPDATE','DELETE','LOCK TABLES'],
     }
     exec { 'snmptt_dbimport':
       command   => "mysql --defaults-file=${::root_home}/.my.cnf ${mysql_dbname} < /etc/snmp/snmptt.sql",
