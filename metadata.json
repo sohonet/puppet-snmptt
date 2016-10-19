@@ -1,0 +1,17 @@
+{
+  "name": "puppet-snmptt",
+  "version": "0.0.1",
+  "summary": "Puppet module to install and configure SNMPTT",
+  "author": "Scott Barr",
+  "description": "From Authors page: NMPTT (SNMP Trap Translator) is an SNMP trap handler written in Perl for use with the Net-SNMP / UCD-SNMP snmptrapd program",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.0.2"
+    }
+  ],
+  "checksums": {},
+  "source": "https://github.com/wyrie/puppet-snmptt",
+  "project_page": "https://github.com/wyrie/puppet-snmptt",
+  "license": "Apache-2.0"
+}
