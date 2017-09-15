@@ -44,6 +44,15 @@
 # Array of snmptt.conf files. The COMPLETE path and filename.
 # Example: ['/etc/snmp/snmptt.conf', '/etc/snmp/snmptt.conf.device']
 #
+# [*net_snmp_perl_enable*]
+#   Enable the use of the Perl module from the UCD-SNMP / NET-SNMP package.
+#   Default: false
+#
+# [*description_mode*]
+#   allows you to use the $D substitution variable to include the
+#   description text from the SNMPTT.CONF or MIB files.
+#   Default: false
+#
 # === Examples
 #
 # See tests folder.
@@ -70,12 +79,16 @@ class snmptt (
   $mysql_username          = 'snmpttuser',
   $mysql_password          = 'UNSET',
   $trap_files              = ['/etc/snmp/snmptt.conf'],
+  $net_snmp_perl_enable    = false,
+  $description_mode        = false,
 ) {
   validate_re($ensure, '^(present|absent)$',
   'ensure parameter must have a value of: present or absent')
 
   validate_bool($enable_mysql)
   validate_bool($service_enable)
+  validate_bool($net_snmp_perl_enable)
+  validate_bool($description_mode)
 
   $real_multiple_event          = bool2num($multiple_event)
   $real_dns_enable              = bool2num($dns_enable)
@@ -84,6 +97,8 @@ class snmptt (
   $real_log_system_enable       = bool2num($log_system_enable)
   $real_unknown_trap_log_enable = bool2num($unknown_trap_log_enable)
   $real_syslog_enable           = bool2num($syslog_enable)
+  $real_net_snmp_perl_enable    = bool2num($net_snmp_perl_enable)
+  $real_description_mode        = bool2num($description_mode)
 
   package { 'snmptt':
     ensure => $ensure,
