@@ -13,7 +13,7 @@ strip_domain_list = <<END
 <% end -%>
 END
 resolve_value_ip_addresses = 0
-net_snmp_perl_enable = 0
+net_snmp_perl_enable = <%= @real_net_snmp_perl_enable %>
 net_snmp_perl_cache_enable = 1
 net_snmp_perl_best_guess = 0
 translate_log_trap_oid = 0
@@ -26,7 +26,7 @@ wildcard_expansion_separator = " "
 allow_unsafe_regex = 0
 remove_backslash_from_quotes = 0
 dynamic_nodes = 0
-description_mode = 0
+description_mode = <%= @real_description_mode %>
 description_clean = 1
 threads_enable = 0
 threads_max = 10
