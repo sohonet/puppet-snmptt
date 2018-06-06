@@ -1,24 +1,44 @@
 {
   "name": "wyrie-snmptt",
-  "version": "0.0.1",
-  "summary": "Puppet module to install and configure SNMPTT",
+  "version": "0.1.0",
   "author": "Scott Barr",
-  "description": "From Authors page: NMPTT (SNMP Trap Translator) is an SNMP trap handler written in Perl for use with the Net-SNMP / UCD-SNMP snmptrapd program",
+  "summary": "Puppet module to install and configure SNMPTT",
+  "license": "Apache-2.0",
+  "source": "https://bitbucket.org/wyrie/puppet-snmptt/src",
+  "project_page": "https://bitbucket.org/wyrie/puppet-snmptt",
+  "issues_url": "https://bitbucket.org/wyrie/puppet-snmptt/issues",
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.0.2" },
-    { "name": "puppetlabs/mysql", "version_requirement": ">= 3.0.0 < 4.0.0" }
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.0.2 < 5.0.0"
+    },
+    {
+      "name": "puppetlabs/mysql",
+      "version_requirement": ">= 3.0.0 < 4.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
-      "operatingsystem":"CentOS",
-      "operatingsystemrelease":["6"]
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6"
+      ]
     },
     {
       "operatingsystem": "Debian",
-      "operatingsystemrelease": ["6"]
+      "operatingsystemrelease": [
+        "6"
+      ]
     }
   ],
-  "source": "https://github.com/wyrie/puppet-snmptt",
-  "project_page": "https://github.com/wyrie/puppet-snmptt",
-  "license": "Apache-2.0"
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.8.0 < 6.0.0"
+    }
+  ],
+  "description": "From Authors page: NMPTT (SNMP Trap Translator) is an SNMP trap handler written in Perl for use with the Net-SNMP / UCD-SNMP snmptrapd program",
+  "pdk-version": "1.5.0",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+  "template-ref": "1.5.0-0-gd1b3eca"
 }
