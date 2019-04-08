@@ -25,6 +25,7 @@ describe 'snmptt' do
       end
 
       it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_service('snmptt') }
 
       context 'with default values for all parameters' do
         it { is_expected.to contain_class('snmptt') }
@@ -48,6 +49,18 @@ describe 'snmptt' do
         end
 
         it { is_expected.to contain_file('/etc/snmp/snmptt.sql') }
+      end
+
+      #  Debian / Ubuntu only tests=
+      case facts[:osfamily]
+      when 'RedHat'
+        context 'sysvinit configuration' do
+          it { is_expected.not_to contain_file('/etc/systemd/system/snmptt.service') }
+        end
+      else
+        context 'systemd configuration' do
+          it { is_expected.to contain_file('/etc/systemd/system/snmptt.service') }
+        end
       end
     end
   end

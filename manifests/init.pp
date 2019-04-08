@@ -163,10 +163,6 @@ class snmptt (
     notify  => Service['snmptt'],
   }
 
-  service { 'snmptt':
-    ensure    => $service_enable,
-    enable    => $service_enable,
-    hasstatus => false,
-    pattern   => '/usr/sbin/snmptt',
-  }
+  class { 'snmptt::service': }
+
 }
