@@ -6,7 +6,7 @@ snmptt_system_name =
 mode = <% if @service_enable %>daemon<% else %>standalone<% end %>
 multiple_event = <%= @real_multiple_event %>
 dns_enable = <%= @real_dns_enable %>
-strip_domain = <%= @real_strip_domain %>
+strip_domain = <%= @strip_domain %>
 strip_domain_list = <<END
 <% @strip_domain_list.each do |tdomain| -%>
 <%= tdomain %>
@@ -16,7 +16,7 @@ resolve_value_ip_addresses = 0
 net_snmp_perl_enable = <%= @real_net_snmp_perl_enable %>
 net_snmp_perl_cache_enable = 1
 net_snmp_perl_best_guess = 0
-translate_log_trap_oid = 0
+translate_log_trap_oid = <%= @translate_log_trap_oid %>
 translate_value_oids = 1
 translate_enterprise_oid_format = 1
 translate_trap_oid_format = 1
@@ -25,6 +25,7 @@ translate_integers = 1
 wildcard_expansion_separator = " "
 allow_unsafe_regex = 0
 remove_backslash_from_quotes = 0
+mibs_environment = <%= @mibs_environment %>
 dynamic_nodes = 0
 description_mode = <%= @real_description_mode %>
 description_clean = 1
@@ -48,6 +49,9 @@ log_system_file = /var/log/snmptt/snmpttsystem.log
 unknown_trap_log_enable = <%= @real_unknown_trap_log_enable %>
 unknown_trap_log_file = /var/log/snmptt/snmpttunknown.log
 statistics_interval = 0
+<% if @date_time_format -%>
+date_time_format = <%= @date_time_format %>
+<% end -%>
 syslog_enable = <%= @real_syslog_enable %>
 syslog_facility = local0
 syslog_level_debug = <<END
