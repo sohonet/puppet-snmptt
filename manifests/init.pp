@@ -62,33 +62,26 @@
 # Scott Barr <gsbarr@gmail.com>
 #
 class snmptt (
-  $ensure                  = 'present',
-  $service_enable          = true,
-  $multiple_event          = true,
-  $dns_enable              = false,
-  $strip_domain            = false,
-  $strip_domain_list       = [],
-  $log_enable              = true,
-  $log_system_enable       = false,
-  $unknown_trap_log_enable = false,
-  $syslog_enable           = true,
-  $enable_mysql            = false,
-  $mysql_host              = 'localhost',
-  $mysql_port              = '3306',
-  $mysql_dbname            = 'snmptt',
-  $mysql_username          = 'snmpttuser',
-  $mysql_password          = 'UNSET',
-  $trap_files              = ['/etc/snmp/snmptt.conf'],
-  $net_snmp_perl_enable    = false,
-  $description_mode        = false,
+  Enum['present', 'absent'] $ensure = 'present',
+  Boolean $service_enable           = true,
+  Boolean $multiple_event           = true,
+  Boolean $dns_enable               = false,
+  Boolean $strip_domain             = false,
+  Array $strip_domain_list          = [],
+  Boolean $log_enable               = true,
+  Boolean $log_system_enable        = false,
+  Boolean $unknown_trap_log_enable  = false,
+  Boolean $syslog_enable            = true,
+  Boolean $enable_mysql             = false,
+  String $mysql_host                = 'localhost',
+  Integer $mysql_port               = 3306,
+  String $mysql_dbname              = 'snmptt',
+  String $mysql_username            = 'snmpttuser',
+  String $mysql_password            = 'UNSET',
+  Array $trap_files                 = ['/etc/snmp/snmptt.conf'],
+  Boolean $net_snmp_perl_enable     = false,
+  Boolean $description_mode         = false,
 ) {
-  validate_re($ensure, '^(present|absent)$',
-  'ensure parameter must have a value of: present or absent')
-
-  validate_bool($enable_mysql)
-  validate_bool($service_enable)
-  validate_bool($net_snmp_perl_enable)
-  validate_bool($description_mode)
 
   $real_multiple_event          = bool2num($multiple_event)
   $real_dns_enable              = bool2num($dns_enable)
