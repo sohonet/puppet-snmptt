@@ -27,14 +27,22 @@
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "6"
+        "8",
+        "9"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "16.04",
+        "18.04"
       ]
     }
   ],
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 3.8.0 < 6.0.0"
+      "version_requirement": ">= 4.8.0 < 6.0.0"
     }
   ],
   "description": "From Authors page: NMPTT (SNMP Trap Translator) is an SNMP trap handler written in Perl for use with the Net-SNMP / UCD-SNMP snmptrapd program",
