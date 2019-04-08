@@ -13,7 +13,7 @@ pipelines:
           - ruby --version
           - bundler --version
           - bundle install
-          - bundle exec rake spec
+          - bundle exec rake test
 
 definitions:
   caches:

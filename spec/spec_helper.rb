@@ -13,6 +13,7 @@ include RspecPuppetFacts
 default_facts = {
   puppetversion: Puppet.version,
   facterversion: Facter.version,
+  root_home: '/root',
 }
 
 default_facts_path = File.expand_path(File.join(File.dirname(__FILE__), 'default_facts.yml'))
